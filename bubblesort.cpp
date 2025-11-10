@@ -7,7 +7,7 @@ int main() {
     cin >> n;
 
     int arr[n];
-    cout << "Inserisci i numeri separati da spazio: ";
+    cout << "Inserisci i numeri che vuoi ordinare: ";
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
