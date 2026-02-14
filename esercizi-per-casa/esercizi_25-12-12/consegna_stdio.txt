@@ -1,0 +1,2 @@
+int __cdecl printf(const char * __restrict__ _Format,...);
+int __cdecl scanf(const char * __restrict__ _Format,...);
