@@ -1,4 +1,4 @@
-#include <stdio.h>
+	#include <stdio.h>
 #include <stdlib.h>
 #define N 4
 void Trasposta (int m[N][N], int m1[N][N]);
