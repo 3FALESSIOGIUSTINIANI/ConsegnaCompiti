@@ -6,7 +6,7 @@ return n+f(n-1);
 }
 
 void calcolo(){
-int v={2,4,10,3,1};
+int v[]={2,4,10,3,1};
 int c=0;
 int n=5;
 for(int i=0;i<n;i++){
@@ -48,7 +48,7 @@ int main(){
     int vcerca[]={5,2,7,2};
     int num=4;
     int x=2;
-f(4);//nessuno dei valori elencati
+f(4);//ritorna 10
 calcolo();//conta quanti elementi sono pari
 cerca(vcerca,num,x);    //ritorna 1
 stampa();// stampa 3 4
