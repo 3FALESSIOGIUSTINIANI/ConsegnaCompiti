@@ -30,9 +30,8 @@ void inizializza_contatti(){
     rubrica[9] = {"luigi",     "verdi",     "222222222"};
 numero_contatti=10;
 }
-void ricerca_sequenziale();
 void aggiungi_contatto();
-
+void ricerca_binaria();
 
 
 #endif

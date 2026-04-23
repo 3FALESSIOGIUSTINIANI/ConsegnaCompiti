@@ -7,7 +7,7 @@ int main(){
     inizializza_contatti();
 do {
         cout << "\n====== MENU RUBRICA ======\n";
-        cout << "1. Ricerca contatto\n";
+        cout << "1. Ricerca contatto (per cognome)\n";
         cout << "2. Inserisci nuovo contatto\n";
         cout << "0. Esci (i dati andranno persi)\n";
         cout << "Scelta: ";
@@ -15,7 +15,7 @@ do {
 
         switch (scelta) {
             case 1:
-                ricerca_sequenziale();
+                ricerca_binaria();
                 break;
             case 2:
                 aggiungi_contatto();
