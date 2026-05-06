@@ -1,11 +1,12 @@
 #include <iostream>
 #include "RUBRICA.H"
-
 using namespace std;
-int main(){
+
+int main() {
     int scelta;
     inizializza_contatti();
-do {
+
+    do {
         cout << "\n====== MENU RUBRICA ======\n";
         cout << "1. Ricerca contatto (per cognome)\n";
         cout << "2. Inserisci nuovo contatto\n";
@@ -14,12 +15,8 @@ do {
         cin >> scelta;
 
         switch (scelta) {
-            case 1:
-                ricerca_binaria();
-                break;
-            case 2:
-                aggiungi_contatto();
-                break;
+            case 1: ricerca_binaria();   break;
+            case 2: aggiungi_contatto(); break;
             case 0:
                 cout << "Uscita dal programma. La memoria RAM verra' liberata." << endl;
                 break;
