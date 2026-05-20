@@ -1,7 +1,6 @@
 #include "RUBRICA.H"
 using namespace std;
 
-// DEFINIZIONI delle variabili globali (dichiarate extern in RUBRICA.H)
 int numero_contatti = 0;
 Contatto rubrica[max_contatti];
 
