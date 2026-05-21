@@ -8,9 +8,20 @@ public:
 
     void identifica() const {
         cout << "[Veicolo - Non Virtuale] Sono un mezzo di trasporto generico." << endl;
-    }
 
-    virtual void muoviti() const {
+        virtual void identifica();
+        virtual void muoviti();
+        virtual void suonaClacson();
+    }
+   
+};
+
+
+class Automobile : public Veicolo {
+public:
+
+
+     virtual void muoviti() const {
         cout << "[Veicolo - Virtuale 1] Mi muovo in qualche modo." << endl;
     }
 
@@ -20,27 +31,6 @@ public:
 
     virtual int getNumeroRuote() const {
         return 0;
-    }
-};
-
-
-class Automobile : public Veicolo {
-public:
-
-    void identifica() const {
-        cout << "[Automobile - Non Virtuale] Sono una macchina sportiva." << endl;
-    }
-
-    void muoviti() const override {
-        cout << "[Automobile - Virtuale 1] Guido su strada asfaltata." << endl;
-    }
-
-    void suonaClacson() const override {
-        cout << "[Automobile - Virtuale 2] Beep beep!" << endl;
-    }
-
-    int getNumeroRuote() const override {
-        return 4;
     }
 };
 
