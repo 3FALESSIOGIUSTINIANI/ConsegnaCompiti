@@ -7,7 +7,6 @@ using namespace std;
 
 const int max_contatti = 100;
 
-// Solo DICHIARAZIONI - le definizioni stanno in funzioni.cpp
 extern int numero_contatti;
 extern Contatto rubrica[max_contatti];
 

@@ -65,7 +65,7 @@ void aggiungi_contatto() {
     cout << "Inserisci cognome: "; cin >> cognome;
     cout << "Inserisci telefono: "; cin >> numtel;
 
-    Contatto nuovo(nome, cognome, numtel);  // costruttore con parametri
+    Contatto nuovo(nome, cognome, numtel);
 
     int i = numero_contatti - 1;
 
