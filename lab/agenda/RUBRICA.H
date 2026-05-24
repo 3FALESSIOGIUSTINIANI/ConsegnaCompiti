@@ -5,13 +5,22 @@
 #include "contatto.h"
 using namespace std;
 
-const int max_contatti = 100;
+class GestoreContatti {
+private:
+    static const int max_contatti = 100;
+    Contatto rubrica[max_contatti];
+    int numero_contatti;
+    
+    void inizializza_contatti();
 
-extern int numero_contatti;
-extern Contatto rubrica[max_contatti];
-
-void inizializza_contatti();
-void aggiungi_contatto();
-void ricerca_binaria();
+public:
+    GestoreContatti();
+    
+    void aggiungi_contatto();
+    void ricerca_binaria();
+    void visualizza_tutti();
+    void modifica_contatto();
+    void elimina_contatto();
+};
 
 #endif
