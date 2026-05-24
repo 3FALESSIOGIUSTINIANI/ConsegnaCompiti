@@ -1,11 +1,11 @@
 #include "RUBRICA.H"
 using namespace std;
 
-GestoreContatti::GestoreContatti() : numero_contatti(0) {
+GestoreRAMOrdinata::GestoreRAMOrdinata() : numero_contatti(0) {
     inizializza_contatti();
 }
 
-void GestoreContatti::inizializza_contatti() {
+void GestoreRAMOrdinata::inizializza_contatti() {
     rubrica[0] = Contatto("Gino",      "azzurri",   "000000000");
     rubrica[1] = Contatto("alice",     "bianchi",   "333333333");
     rubrica[2] = Contatto("pino",      "blu",       "555555555");
@@ -19,7 +19,7 @@ void GestoreContatti::inizializza_contatti() {
     numero_contatti = 10;
 }
 
-void GestoreContatti::aggiungi_contatto() {
+void GestoreRAMOrdinata::aggiungi_contatto() {
     if (numero_contatti >= max_contatti) {
         cout << "Errore: Rubrica piena!" << endl;
         return;
@@ -43,7 +43,7 @@ void GestoreContatti::aggiungi_contatto() {
     cout << "Contatto aggiunto con successo!" << endl;
 }
 
-void GestoreContatti::ricerca_binaria() {
+void GestoreRAMOrdinata::ricerca_binaria() {
     if (numero_contatti == 0) {
         cout << "La rubrica è vuota." << endl;
         return;
@@ -79,7 +79,7 @@ void GestoreContatti::ricerca_binaria() {
     }
 }
 
-void GestoreContatti::visualizza_tutti() {
+void GestoreRAMOrdinata::visualizza_tutti() {
     if (numero_contatti == 0) {
         cout << "La rubrica è vuota." << endl;
         return;
@@ -92,7 +92,7 @@ void GestoreContatti::visualizza_tutti() {
     }
 }
 
-void GestoreContatti::modifica_contatto() {
+void GestoreRAMOrdinata::modifica_contatto() {
     if (numero_contatti == 0) {
         cout << "La rubrica è vuota." << endl;
         return;
@@ -146,7 +146,7 @@ void GestoreContatti::modifica_contatto() {
     cout << "Contatto modificato con successo!" << endl;
 }
 
-void GestoreContatti::elimina_contatto() {
+void GestoreRAMOrdinata::elimina_contatto() {
     if (numero_contatti == 0) {
         cout << "La rubrica è vuota." << endl;
         return;

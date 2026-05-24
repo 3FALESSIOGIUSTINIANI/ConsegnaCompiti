@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    GestoreContatti gestore;
+   GestoreContattiABC* gestore = new GestoreRAMOrdinata();
     int scelta;
 
     do {
@@ -18,11 +18,11 @@ int main() {
         cin >> scelta;
 
         switch (scelta) {
-            case 1: gestore.aggiungi_contatto();  break;
-            case 2: gestore.ricerca_binaria();    break;
-            case 3: gestore.visualizza_tutti();   break;
-            case 4: gestore.modifica_contatto();  break;
-            case 5: gestore.elimina_contatto();   break;
+            case 1: gestore->aggiungi_contatto();  break;
+            case 2: gestore->ricerca_binaria();    break;
+            case 3: gestore->visualizza_tutti();   break;
+            case 4: gestore->modifica_contatto();  break;
+            case 5: gestore->elimina_contatto();   break;
             case 0:
                 cout << "Uscita dal programma." << endl;
                 break;
@@ -30,6 +30,6 @@ int main() {
                 cout << "Scelta non valida!" << endl;
         }
     } while (scelta != 0);
-
+    delete gestore;
     return 0;
 }
