@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-   GestoreContattiABC* gestore = new GestoreRAMOrdinata();
+    GestoreContattiABC* gestore = new GestoreMirroredRAM("rubrica.txt");
     int scelta;
 
     do {
@@ -24,12 +24,14 @@ int main() {
             case 4: gestore->modifica_contatto();  break;
             case 5: gestore->elimina_contatto();   break;
             case 0:
-                cout << "Uscita dal programma." << endl;
+                cout << "Uscita dal programma..." << endl;
                 break;
             default:
                 cout << "Scelta non valida!" << endl;
         }
     } while (scelta != 0);
+    
     delete gestore;
+    cout << "Dati salvati. Arrivederci!" << endl;
     return 0;
 }

@@ -1,5 +1,8 @@
 #include "RUBRICA.H"
+#include <fstream>
+#include <cstdio>
 using namespace std;
+
 
 GestoreRAMOrdinata::GestoreRAMOrdinata() : numero_contatti(0) {
     inizializza_contatti();
@@ -26,7 +29,7 @@ void GestoreRAMOrdinata::aggiungi_contatto() {
     }
 
     string nome, cognome, numtel;
-    cout << "Inserisci nome: ";    cin >> nome;
+    cout << "Inserisci nome: "; cin >> nome;
     cout << "Inserisci cognome: "; cin >> cognome;
     cout << "Inserisci telefono: "; cin >> numtel;
 
@@ -178,4 +181,68 @@ void GestoreRAMOrdinata::elimina_contatto() {
     numero_contatti--;
 
     cout << "Contatto eliminato con successo!" << endl;
+}
+
+
+GestoreMirroredRAM::GestoreMirroredRAM(const string& file) : filename(file) {
+    carica_da_file();
+}
+
+GestoreMirroredRAM::~GestoreMirroredRAM() {
+    salva_su_file();
+}
+
+void GestoreMirroredRAM::carica_da_file() {
+    ifstream file(filename);
+    
+    if (!file.is_open()) {
+        cout << "File '" << filename << "' non trovato. Creazione con contatti di default...\n";
+        inizializza_contatti();
+        salva_su_file();
+        cout << "File creato con successo.\n\n";
+        return;
+    }
+
+    string nome, cognome, numtel;
+    numero_contatti = 0;
+    
+    while (file >> nome >> cognome >> numtel && numero_contatti < max_contatti) {
+        rubrica[numero_contatti] = Contatto(nome, cognome, numtel);
+        numero_contatti++;
+    }
+    
+    file.close();
+    cout << "Caricati " << numero_contatti << " contatti dal file.\n\n";
+}
+
+void GestoreMirroredRAM::salva_su_file() const {
+    ofstream file(filename);
+    
+    if (!file.is_open()) {
+        cerr << "Errore: impossibile aprire il file '" << filename << "' per la scrittura!" << endl;
+        return;
+    }
+    
+    for (int i = 0; i < numero_contatti; i++) {
+        file << rubrica[i].getNome() << " "
+             << rubrica[i].getCognome() << " "
+             << rubrica[i].getNumtel() << "\n";
+    }
+    
+    file.close();
+}
+
+void GestoreMirroredRAM::aggiungi_contatto() {
+    GestoreRAMOrdinata::aggiungi_contatto();
+    salva_su_file();
+}
+
+void GestoreMirroredRAM::modifica_contatto() {
+    GestoreRAMOrdinata::modifica_contatto();
+    salva_su_file();
+}
+
+void GestoreMirroredRAM::elimina_contatto() {
+    GestoreRAMOrdinata::elimina_contatto();
+    salva_su_file();
 }
