@@ -11,9 +11,7 @@ private:
     string numtel;
 
 public:
-
     Contatto();
-
     Contatto(string nome, string cognome, string numtel);
 
     string getNome()    const;
