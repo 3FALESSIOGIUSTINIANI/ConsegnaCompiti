@@ -1,15 +1,15 @@
 public class processPayment{
     private int credito;
 
-    public void inserisciMoneta(int input){
+    public void inserisciMoneta(double input){
 
     }
 
-    public int getCredito(){
-        return 0;
+    public double getCredito(){
+        return 0.0;
     }
 
-    public int calcolaResto(int prezzo){
-        return 0;
+    public double calcolaResto(double prezzo){
+        return 0.0;
     }
 }
